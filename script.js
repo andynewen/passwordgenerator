@@ -35,6 +35,16 @@ var upperCasedCharacters = [ 'A','B','C','D','E','F','G','H','I','J','K','L','M'
 
 var passwordlength = prompt("Please enter the length of your password.\nA password must contain atleast 8 character and no more than 128 characters.\nPassword length should be between 8 and 128 characters ") 
 
-//Valid password length
+// Validating password length to meet criteria
+
+if (isNaN(passwordlength)) {
+  alert("Please enter a valid number.")
+  return null
+}
+
+if (passwordlength < 8 || passwordlength > 128) {
+  alert("Password length should be between 8 and 128 characters")
+  return null
+}
 
 }
