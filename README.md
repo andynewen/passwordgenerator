@@ -20,6 +20,8 @@
 ### Built With
 
 * Javascript
+* HTML
+* CSS
 
 ## Features
 
