@@ -14,6 +14,8 @@
 * Creating a password generator from scratch in JavaScript.
 * Quite a challenging task this week but in the end got it working just like the demo.
 
+## Screenshots
+<img src ="./assets/images/Screenshot (75).png">
 
 ### Built With
 
