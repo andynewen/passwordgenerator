@@ -10,7 +10,7 @@
 ## Overview
 
 
-* This is the link to the live demo of the website: https://andynewen.github.io/portfolio/
+* This is the link to the live demo of the website
 * Creating a password generator from scratch in JavaScript.
 * Quite a challenging task this week but in the end got it working just like the demo.
 
