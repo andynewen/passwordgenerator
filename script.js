@@ -26,18 +26,20 @@ function CharShuffle(min, max) {
 
 // Windows prompt for the length of the password.
 function generatePassword(){
+var passwordlength = prompt("Please enter the length of your password.\nPassword length should be between 8 and 128 characters.") 
+
 
 // Variable settings the array of data by all characters
-var specialCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.' ];
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var lowerCasedCharacters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
-var upperCasedCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+var specialCharacters = [ "!#$%&'()*+,-.\/:;<=>?@[^_`]{|}~" ];
+var numericCharacters = [ "0123456789" ];
+var lowerCasedCharacters = [ "abcdefghijklmnopqrstuvwxyz" ];
+var upperCasedCharacters = [ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ];
+
 
 // Added pw and characters variable for later
 var pwCharacter = [];
 var Characters = [];
 
-var passwordlength = prompt("Please enter the length of your password.\nA password must contain atleast 8 character and no more than 128 characters.\nPassword length should be between 8 and 128 characters ") 
 
 // Validating password length to meet criteria
 
@@ -50,5 +52,47 @@ if (passwordlength < 8 || passwordlength > 128) {
   alert("Password length should be between 8 and 128 characters")
   return null
 }
+
+// These are the prompts to include character types in their random password
+else{
+
+  var loweranswer = confirm("Press OK if you want lowercase characters in your password?");
+  if (loweranswer ){
+    Characters = Characters + lowerCasedCharacters;
+  }
+  
+  var upperanswer =  confirm("Press OK if you want uppercase characters in your password?");
+  if (upperanswer ){
+    Characters = Characters + upperCasedCharacters;
+  }
+ 
+  var numberanswer =  confirm("Press OK if you want numbers in your password?");
+  if (numberanswer ){
+    Characters = Characters + numericCharacters;
+  }
+
+  var signsanswer = confirm("Press OK if you want special characters in your password?");
+  if (signsanswer){
+    Characters = Characters + specialCharacters;
+  }
+
+if (Characters != ''){
+
+// This creates a password from all the inputs the user has clicked.
+for (var i=0; i<passwordlength; i++){
+  var randomnum = Math.floor(Math.random() * Characters.length);
+  pwCharacter += Characters.substring(randomnum,randomnum+1);
+}
+
+}
+
+else {
+alert("Please select atleast one character type to generate a password.");
+
+}
+
+}
+
+return pwCharacter;
 
 }
